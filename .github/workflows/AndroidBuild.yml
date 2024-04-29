@@ -29,7 +29,7 @@ jobs:
         run: 
           jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 \
           -keystore SignApk/PtProKeyStore.jks \
-          -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
-          -keypass ${{ secrets.KEY_PASSWORD }} \
+          -storepass "${{ secrets.KEYSTORE_PASSWORD }}" \
+          -keypass "${{ secrets.KEY_PASSWORD }}" \
           SignApk/app.aab \
           key0
