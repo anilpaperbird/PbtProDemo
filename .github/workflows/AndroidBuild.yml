@@ -27,7 +27,7 @@ jobs:
 
       - name: Sign AAB
         run: |
-          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore app/SignApk/PtProKeyStore.jks -storepass ${{ secrets.KEYSTORE_PASSWORD }} -keypass ${{ secrets.KEY_PASSWORD }} app/SignApk/app.aab key0
+          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore app/SignApk/PtProKeyStore.jks -storepass ptbeta@2410 -keypass ptbeta@2410 app/SignApk/app.aab key0
 
       - name: Zipalign AAB
         run: zipalign -v 4 app/SignApk/signed_app.aab
