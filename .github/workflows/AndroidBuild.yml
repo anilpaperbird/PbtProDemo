@@ -30,8 +30,8 @@ jobs:
       - name: Build and sign AAB
         run: ./gradlew assembleRelease
 
-      - name: Upload signed AAB
+      - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.3
         with:
           name: app-release
-          path: app/build/outputs/bundle/release/ 
+          path: app/release/ 
