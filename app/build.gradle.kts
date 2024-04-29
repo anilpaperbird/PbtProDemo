@@ -5,16 +5,15 @@ plugins {
 
 android {
 
-
     signingConfigs {
         create("PtPro") {
-            storeFile =
-                file("${rootDir}SignApk/PtProKeyStore.jks")
-            storePassword = "ptbeta@2410"
-            keyPassword = "ptbeta@2410"
-            keyAlias = "key0"
+            storeFile =file("${rootDir}app/SignApk/PtProKeyStore.jks")
+            storePassword = System.getenv("ptbeta@2410")
+            keyAlias = System.getenv("key0")
+            keyPassword = System.getenv("ptbeta@2410")
         }
     }
+
     namespace = "com.pbt.ptprodemo"
     compileSdk = 34
 
