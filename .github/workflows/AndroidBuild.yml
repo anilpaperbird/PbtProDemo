@@ -27,9 +27,9 @@ jobs:
 
       - name: Sign app bundle
         run: 
-          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 \
-          -keystore SignApk/PtProKeyStore.jks \
-          -storepass "ptbeta@2410" \
-          -keypass "ptbeta@2410" \
-          SignApk/app.aab \
+          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 
+          -keystore SignApk/PtProKeyStore.jks 
+          -storepass "ptbeta@2410" 
+          -keypass "ptbeta@2410" 
+          SignApk/app.aab 
           key0
