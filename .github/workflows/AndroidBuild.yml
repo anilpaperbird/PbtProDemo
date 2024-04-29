@@ -22,11 +22,11 @@ jobs:
           name: PtProReleased.apk
           path: app/build/outputs/apk/debug/app-debug.apk
 
-          - name: Build app bundle
+      - name: Build app bundle
         run: ./gradlew bundleRelease
 
       - name: Sign app bundle
-        run: |
+        run: 
           jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 \
           -keystore SignApk/PtProKeyStore.jks \
           -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
