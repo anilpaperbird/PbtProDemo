@@ -21,15 +21,19 @@ jobs:
         with:
           name: PtProReleased.apk
           path: app/build/outputs/apk/debug/app-debug.apk
-
-      - name: Build app bundle
+        
+      - name: Build with Gradle
         run: ./gradlew bundleRelease
 
-      - name: Sign app bundle
-        run: 
-          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 
-          -keystore SignApk/PtProKeyStore.jks 
-          -storepass "ptbeta@2410" 
-          -keypass "ptbeta@2410" 
-          SignApk/app.aab 
-          key0
+      - name: Sign AAB
+        run: |
+          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA-256 -keystore SignApk\PtProKeyStore.jks -storepass ${{ secrets.KEYSTORE_PASSWORD }} -keypass ${{ secrets.KEY_PASSWORD }} SignApk/app.aab key0
+
+      - name: Zipalign AAB
+        run: zipalign -v 4 SignApk/signed_app.aab
+
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: signed-app-bundle
+          path: SignApk/signed_app.aab    
