@@ -14,13 +14,15 @@ jobs:
         with:
           java-version: '17'
           distribution: adopt
+
       - name: Build With Gradle
         run: ./gradlew build
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.3
-        with:
-          name: PtProReleased.apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+
+      # - name: Upload a Build Artifact
+      #   uses: actions/upload-artifact@v4.3.3
+      #   with:
+      #     name: PtProReleased.apk
+      #     path: app/build/outputs/apk/debug/app-debug.apk
         
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -29,7 +31,7 @@ jobs:
         run: ./gradlew assembleRelease
 
       - name: Upload signed AAB
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.3.3
         with:
           name: app-release
           path: app/build/outputs/bundle/release/ 
