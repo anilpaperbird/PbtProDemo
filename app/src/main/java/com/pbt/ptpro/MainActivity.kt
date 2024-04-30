@@ -1,11 +1,11 @@
-package com.pbt.ptprodemo
+package com.pbt.ptpro
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.pbtpro.ptprodemo.R
+import com.pbtpro.ptprodemotest.R
 
 
 class MainActivity : AppCompatActivity() {
