@@ -14,11 +14,11 @@ android {
         }
     }
 
-    namespace = "com.pbtpro.testtwo"
+    namespace = "com.pbtpro.ptprodemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.pbtpro.testtwo"
+        applicationId = "com.pbtpro.ptprodemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
