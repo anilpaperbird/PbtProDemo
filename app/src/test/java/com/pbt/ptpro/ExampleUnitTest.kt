@@ -1,4 +1,4 @@
-package com.pbt.ptprodemo
+package com.pbt.ptpro
 
 import org.junit.Test
 
