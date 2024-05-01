@@ -1,0 +1,118 @@
+Index: app/src/main/java/com/pbt/ptpro/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.pbt.ptpro\r\n\r\nimport android.os.Bundle\r\nimport androidx.activity.enableEdgeToEdge\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.core.view.ViewCompat\r\nimport androidx.core.view.WindowInsetsCompat\r\nimport com.pbtpro.ptprodemo.R\r\n\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        enableEdgeToEdge()\r\n        setContentView(R.layout.activity_main)\r\n    //tesst1122\r\n        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->\r\n            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())\r\n            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)\r\n            insets\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/pbt/ptpro/MainActivity.kt b/app/src/main/java/com/pbt/ptpro/MainActivity.kt
+--- a/app/src/main/java/com/pbt/ptpro/MainActivity.kt	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
++++ b/app/src/main/java/com/pbt/ptpro/MainActivity.kt	(date 1714543827043)
+@@ -5,7 +5,7 @@
+ import androidx.appcompat.app.AppCompatActivity
+ import androidx.core.view.ViewCompat
+ import androidx.core.view.WindowInsetsCompat
+-import com.pbtpro.ptprodemo.R
++import com.pbtpro.sarkar.R
+ 
+ 
+ class MainActivity : AppCompatActivity() {
+Index: .idea/kotlinc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/kotlinc.xml b/.idea/kotlinc.xml
+deleted file mode 100644
+--- a/.idea/kotlinc.xml	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
++++ /dev/null	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="KotlinJpsPluginSettings">
+-    <option name="version" value="1.9.0" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+deleted file mode 100644
+--- a/.idea/deploymentTargetDropDown.xml	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
++++ /dev/null	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="deploymentTargetDropDown">
+-    <value>
+-      <entry key="app">
+-        <State />
+-      </entry>
+-    </value>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .github/workflows/AndroidBuild.yml
+===================================================================
+diff --git a/.github/workflows/AndroidBuild.yml b/.github/workflows/AndroidBuild.yml
+deleted file mode 100644
+--- a/.github/workflows/AndroidBuild.yml	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
++++ /dev/null	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
+@@ -1,37 +0,0 @@
+-name: PtProBuild
+-'on':
+-  push:
+-    branches:
+-      - main
+-jobs:
+-  Build:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v4.1.4
+-      - name: Setup Java JDK
+-        uses: actions/setup-java@v4.2.1
+-        with:
+-          java-version: '17'
+-          distribution: adopt
+-
+-      - name: Build With Gradle
+-        run: ./gradlew build
+-
+-      - name: Upload a Build Artifact
+-        uses: actions/upload-artifact@v4.3.3
+-        with:
+-           name: PtProReleased.apk
+-           path: app/build/outputs/apk/debug/app-debug.apk
+-        # dvzsvcz fdg
+-      - name: Grant execute permission for gradlew
+-        run: chmod +x gradlew
+-
+-      - name: Build and sign AAB
+-        run: ./gradlew assembleRelease
+-
+-      - name: Upload a Build Artifact
+-        uses: actions/upload-artifact@v4.3.3
+-        with:
+-          name: app-release.aab
+-          path: app/release/
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 85b67ad2b166069a2356053758539dd7ff42b2da)
++++ b/.idea/gradle.xml	(date 1714543752021)
+@@ -1,6 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
