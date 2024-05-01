@@ -18,7 +18,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.pbtpro.betaone"
+        applicationId = "com.pbtpro.betatwo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
