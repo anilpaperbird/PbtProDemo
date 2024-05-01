@@ -18,7 +18,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.pbtpro.testone"
+        applicationId = "com.pbtpro.beta"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
