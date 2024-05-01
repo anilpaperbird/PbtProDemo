@@ -14,11 +14,11 @@ android {
         }
     }
 
-    namespace = "com.pbtpro.ptprodemo"
+    namespace = "com.pbtpro.sarkar"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.pbtpro.ptprodemo"
+        applicationId = "com.pbtpro.sarkar"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
