@@ -14,7 +14,7 @@ android {
         }
     }
 
-    namespace = "com.pbtpro.sarkar"
+    namespace = "com.pbtpro.ptprodemo"
     compileSdk = 34
 
     defaultConfig {
